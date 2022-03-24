@@ -16,4 +16,12 @@ ul {
   list-style-type: none;
 }
 
+.r-attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.r-attribution a {
+  color: #3e52a3;
+}
+
 /*# sourceMappingURL=index.css.map */

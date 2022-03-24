@@ -1,3 +1,66 @@
+@use 'sass:map';
+@use 'sass:math';
+
+//media query
+$breakpoints: (
+  mobile: 350px,
+  tablet: 720px,
+  laptop: 1200px,
+  desktop: 1520px,
+);
+
+@mixin media($size) {
+  $breakpoint: map.get($breakpoints, $size);
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+//fonts
+$font-barlow: 'Barlow', sans-serif;
+$font-fraunces: 'Fraunces', serif;
+
+//colors
+$very-dark-desaturated-blue: hsl(212, 27%, 19%);
+$very-dark-grayish-blue: hsl(213, 9%, 39%);
+$dark-grayish-blue: hsl(232, 10%, 55%);
+$grayish-blue: hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+
+//typography
+@mixin t-navlink {
+  font-family: $font-barlow;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.142857px;
+
+  @include media(laptop) {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.128571px;
+  }
+}
+
+@mixin t-h1 {
+  font-family: $font-fraunces;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: math.div(49, 40);
+  letter-spacing: 6.25px;
+  text-transform: uppercase;
+
+  @include media(tablet) {
+    font-size: 48px;
+  }
+
+  @include media(laptop) {
+    font-size: 56px;
+    line-height: 69px;
+    letter-spacing: 8.75px;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -14,4 +77,13 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+.r-attribution {
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
 }
