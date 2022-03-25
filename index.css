@@ -24,4 +24,72 @@ ul {
   color: #3e52a3;
 }
 
+.r-navbar {
+  margin: 32px auto 0px;
+  width: 87.2%;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.r-navbar .hamburger-menu {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+.r-navbar .navlink-list[data-state=closed] {
+  display: none;
+}
+
+.r-header {
+  position: relative;
+  padding-top: 88px;
+  height: clamp(394px, 128.5333333333vw, 544px);
+}
+.r-header .background-image {
+  position: absolute;
+  inset: -56px 0 0 0;
+  z-index: -1;
+}
+.r-header .background-image .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+.r-header .title {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1.225;
+  letter-spacing: 6.25px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+@media screen and (min-width: 720px) {
+  .r-header .title {
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .r-header .title {
+    font-size: 56px;
+    line-height: 69px;
+    letter-spacing: 8.75px;
+  }
+}
+.r-header .btn-roll {
+  display: block;
+  margin: 52px auto 0;
+  width: 34px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.r-header .btn-roll .arrow {
+  width: 100%;
+  height: auto;
+}
+
 /*# sourceMappingURL=index.css.map */
