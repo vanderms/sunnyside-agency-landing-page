@@ -43,6 +43,7 @@ ul {
 }
 .r-navbar .navlink-list[data-state=closed] {
   height: 0;
+  visibility: hidden;
 }
 .r-navbar .navlink-list[data-state=open] {
   position: absolute;
@@ -56,7 +57,7 @@ ul {
   gap: 32px;
   padding-top: 63px;
   z-index: 999;
-  clip-path: polygon(92.705% 7.295%, 100% 0, 100% 100%, 0 100%, 0 7.295%);
+  clip-path: polygon(calc(100% - 24px) 24px, 100% 0, 100% 100%, 0 100%, 0 24px);
 }
 .r-navbar .navlink-list[data-state=open] .navlink {
   font-family: "Barlow", sans-serif;
@@ -81,7 +82,7 @@ ul {
   letter-spacing: -0.107143px;
   text-transform: uppercase;
   color: #24303e;
-  background-color: #FBD600;
+  background-color: #fbd600;
   width: 140px;
   height: 56px;
   display: inline-grid;

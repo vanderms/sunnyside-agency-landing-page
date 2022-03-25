@@ -28,10 +28,8 @@ $grayish-blue: #a7abae;
 $light-gray: #fffcf8;
 $white: #ffffff;
 
-
-
 $soft-red: #fe7867;
-$yellow: #FBD600;
+$yellow: #fbd600;
 $dark-desaturated-cyan: #25564b;
 $dark-blue: #19536b;
 $dark-moderate-cyan: #458c7e;
@@ -126,6 +124,7 @@ ul {
 
     &[data-state='closed'] {
       height: 0;
+      visibility: hidden;
     }
 
     &[data-state='open'] {
@@ -140,7 +139,13 @@ ul {
       gap: 32px;
       padding-top: 63px;
       z-index: 999;
-      clip-path: polygon(92.705% 7.295%, 100% 0, 100% 100%, 0 100%, 0 7.295%);
+      clip-path: polygon(
+        calc(100% - 24px) 24px,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 24px
+      );
 
       .navlink {
         @include t-navlink;
