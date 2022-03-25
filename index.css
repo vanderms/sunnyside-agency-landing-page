@@ -30,14 +30,63 @@ ul {
   height: 24px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .r-navbar .hamburger-menu {
   border: none;
   background-color: inherit;
   cursor: pointer;
 }
+.r-navbar .navlink-list {
+  overflow: hidden;
+  transition: height 0.25s;
+}
 .r-navbar .navlink-list[data-state=closed] {
-  display: none;
+  height: 0;
+}
+.r-navbar .navlink-list[data-state=open] {
+  position: absolute;
+  background-color: #fffcf8;
+  width: 100%;
+  height: 329px;
+  top: 50px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 63px;
+  z-index: 999;
+  clip-path: polygon(92.705% 7.295%, 100% 0, 100% 100%, 0 100%, 0 7.295%);
+}
+.r-navbar .navlink-list[data-state=open] .navlink {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.142857px;
+  color: #818498;
+}
+@media screen and (min-width: 1200px) {
+  .r-navbar .navlink-list[data-state=open] .navlink {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.128571px;
+  }
+}
+.r-navbar .navlink-list[data-state=open] .call-to-action {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: -0.107143px;
+  text-transform: uppercase;
+  color: #24303e;
+  background-color: #FBD600;
+  width: 140px;
+  height: 56px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
 }
 
 .r-header {
@@ -65,7 +114,7 @@ ul {
   letter-spacing: 6.25px;
   text-transform: uppercase;
   text-align: center;
-  color: white;
+  color: #ffffff;
 }
 @media screen and (min-width: 720px) {
   .r-header .title {
