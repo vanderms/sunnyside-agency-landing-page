@@ -24,6 +24,7 @@ const navbar = {
       this.modal.dataset.state = 'open';
     }, 16);
   },
+  
   isInside(target) {
     return (
       target && (target === this.modal || this.isInside(target.parentNode))

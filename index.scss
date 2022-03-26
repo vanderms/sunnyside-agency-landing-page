@@ -93,6 +93,22 @@ $dark-moderate-cyan: #458c7e;
   }
 }
 
+@mixin t-h2-02 {
+  font-family: $font-fraunces;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: -0.2px;
+  color: #24554a;
+}
+
+@mixin t-h2-03 {
+  @include t-h2-02();
+  color: #052c3b;
+  opacity: 0.75;
+}
+
 @mixin t-p1 {
   font-family: $font-barlow;
   font-weight: 600;
@@ -105,6 +121,21 @@ $dark-moderate-cyan: #458c7e;
   @include media(laptop) {
     text-align: left;
   }
+}
+
+@mixin t-p2 {
+  font-family: $font-barlow;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: -0.114286px;
+  color: #24554a;
+}
+
+@mixin t-p3 {
+  @include t-p2;
+  color: #19536c;
 }
 
 @mixin t-cta-primary {
@@ -416,5 +447,57 @@ ul {
         z-index: -1;
       }
     }
+  }
+}
+
+.rt-details-02 {
+  padding-bottom: math.percentage(math.div(600, 375));
+  height: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .image-container {
+    position: absolute;
+    inset: 0 0 0 0;
+
+    .image {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .header {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    @include container;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 59px;    
+
+    .description[data-typography='p2']{
+      @include t-p2();
+    }
+    .description[data-typography='p3']{
+      @include t-p3();
+    }
+
+    .title{
+      margin-bottom: 27px;
+    }
+
+    .title[data-typography='h2-02']{
+      @include t-h2-02();
+    }
+
+    .title[data-typography='h2-03']{
+      @include t-h2-03();
+    }
+
+
   }
 }
