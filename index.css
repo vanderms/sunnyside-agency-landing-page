@@ -38,6 +38,8 @@ ul {
     margin-top: 34px;
     height: 56px;
     width: 93.8888888889%;
+    max-width: 1400px;
+    margin-inline: auto;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -135,6 +137,11 @@ ul {
   }
   .r-navbar .navlink-list[data-state=closed] .call-to-action,
 .r-navbar .navlink-list[data-state=open] .call-to-action {
+    background-color: #ffffff;
+    color: #24303e;
+  }
+  .r-navbar .navlink-list[data-state=closed] .call-to-action:hover,
+.r-navbar .navlink-list[data-state=open] .call-to-action:hover {
     background-color: rgba(255, 255, 255, 0.25);
     color: #ffffff;
   }
@@ -143,8 +150,12 @@ ul {
 .r-header {
   position: relative;
   padding-top: 88px;
-  height: clamp(394px, 128.5333333333vw, 544px);
-  height: calc(55.5555555556vw - 90px);
+  height: clamp(394px, 128.5333333333vw, 710px);
+}
+@media screen and (min-width: 1200px) {
+  .r-header {
+    padding-top: 105px;
+  }
 }
 .r-header .background-image {
   position: absolute;
@@ -192,6 +203,11 @@ ul {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+@media screen and (min-width: 1200px) {
+  .r-header .btn-roll {
+    margin-top: 96.5px;
+  }
 }
 .r-header .btn-roll .arrow {
   width: 100%;

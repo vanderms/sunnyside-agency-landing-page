@@ -16,6 +16,11 @@ $breakpoints: (
   }
 }
 
+@mixin container() {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
 //fonts
 $font-barlow: 'Barlow', sans-serif;
 $font-fraunces: 'Fraunces', serif;
@@ -117,6 +122,7 @@ ul {
     margin-top: 34px;
     height: 56px;
     width: math.percentage(math.div(1352, 1440));
+    @include container();
   }
 
   .logo {
@@ -207,8 +213,13 @@ ul {
       }
 
       .call-to-action {
-        background-color: rgba(255, 255, 255, 0.25);
-        color: $white;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.25);
+          color: $white;
+        }
+
+        background-color: $white;
+        color: $very-dark-desaturated-blue;
       }
     }
   }
@@ -217,9 +228,11 @@ ul {
 .r-header {
   position: relative;
   padding-top: 88px;
-  height: clamp(394px, #{math.div(482, 375) * 100}vw, 544px);
+  height: clamp(394px, #{math.div(482, 375) * 100}vw, 710px);
 
-  height: calc(#{math.div(800, 1440) * 100}vw - 90px);
+  @include media(laptop) {
+    padding-top: 105px;
+  }
 
   .background-image {
     position: absolute;
@@ -252,6 +265,10 @@ ul {
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    @include media(laptop) {
+      margin-top: 96.5px;
+    }
 
     .arrow {
       width: 100%;
