@@ -32,4 +32,3 @@ const navbar = {
 };
 
 navbar.init();
-

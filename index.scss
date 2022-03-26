@@ -110,57 +110,105 @@ ul {
   height: 24px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
+
+  @include media(laptop) {
+    margin-top: 34px;
+    height: 56px;
+    width: math.percentage(math.div(1352, 1440));
+  }
+
+  .logo {
+    @include media(laptop) {
+      width: 170px;
+      height: auto;
+    }
+  }
 
   .hamburger-menu {
     border: none;
     background-color: inherit;
     cursor: pointer;
+
+    @include media(laptop) {
+      display: none;
+    }
   }
 
   .navlink-list {
     overflow: hidden;
     transition: height 0.25s;
+  }
 
-    &[data-state='closed'] {
-      height: 0;
-      visibility: hidden;
+  .navlink-list[data-state='closed'] {
+    height: 0;
+    opacity: 0;
+  }
+
+  .navlink-list[data-state='open'] {
+    height: 329px;
+  }
+
+  .navlink-list[data-state='open'],
+  .navlink-list[data-state='closed'] {
+    position: absolute;
+    background-color: $light-gray;
+    width: 100%;
+    top: 50px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 63px;
+    z-index: 999;
+    clip-path: polygon(
+      calc(100% - 24px) 24px,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 24px
+    );
+
+    .navlink {
+      @include t-navlink;
+      color: $dark-grayish-blue;
     }
 
-    &[data-state='open'] {
-      position: absolute;
-      background-color: $light-gray;
-      width: 100%;
-      height: 329px;
-      top: 50px;
-      display: flex;
-      text-align: center;
-      flex-direction: column;
-      gap: 32px;
-      padding-top: 63px;
-      z-index: 999;
-      clip-path: polygon(
-        calc(100% - 24px) 24px,
-        100% 0,
-        100% 100%,
-        0 100%,
-        0 24px
-      );
+    .call-to-action {
+      @include t-cta-primary;
+      color: $very-dark-desaturated-blue;
+      background-color: $yellow;
+      width: 140px;
+      height: 56px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+    }
+  }
+
+  @include media(laptop) {
+    .navlink-list[data-state='closed'],
+    .navlink-list[data-state='open'] {
+      opacity: 1;
+      height: 100%;
+      flex-direction: row;
+      gap: 47px;
+      clip-path: unset;
+      width: auto;
+      position: static;
+      background-color: transparent;
+      overflow: unset;
+      padding-top: 0;
+      align-items: center;
 
       .navlink {
-        @include t-navlink;
-        color: $dark-grayish-blue;
+        color: $white;
       }
 
       .call-to-action {
-        @include t-cta-primary;
-        color: $very-dark-desaturated-blue;
-        background-color: $yellow;
-        width: 140px;
-        height: 56px;
-        display: inline-grid;
-        place-items: center;
-        border-radius: 999px;
+        background-color: rgba(255, 255, 255, 0.25);
+        color: $white;
       }
     }
   }
@@ -171,10 +219,16 @@ ul {
   padding-top: 88px;
   height: clamp(394px, #{math.div(482, 375) * 100}vw, 544px);
 
+  height: calc(#{math.div(800, 1440) * 100}vw - 90px);
+
   .background-image {
     position: absolute;
     inset: -56px 0 0 0;
     z-index: -1;
+
+    @include media(laptop) {
+      top: -90px;
+    }
 
     .image {
       position: absolute;
