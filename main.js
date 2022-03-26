@@ -31,4 +31,22 @@ const navbar = {
   },
 };
 
+const scrollFeature = {
+  target: document.querySelector('#btn-scroll-target'),
+  btn: document.querySelector('#btn-scroll'),
+
+  init() {
+    this.btn.addEventListener('click', () => {
+      const position = this.target.getBoundingClientRect();
+      const y = window.scrollY + position.y;
+      window.scrollTo({
+        top: y,
+        left: 0,
+        behavior: 'smooth',
+      });
+    });
+  },
+};
+
 navbar.init();
+scrollFeature.init();
