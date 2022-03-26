@@ -353,6 +353,11 @@ ul {
   display: flex;
   justify-content: center;
 }
+@media screen and (min-width: 540px) {
+  .rt-details-02 {
+    padding-bottom: 83.3333333333%;
+  }
+}
 .rt-details-02 .image-container {
   position: absolute;
   inset: 0 0 0 0;
