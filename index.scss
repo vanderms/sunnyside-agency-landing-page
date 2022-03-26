@@ -406,6 +406,7 @@ ul {
 
     .description {
       margin-top: 24px;
+      max-width: 445px;
       @include t-p1();
       @include media(laptop) {
         margin-top: 32px;
@@ -450,6 +451,12 @@ ul {
   }
 }
 
+.rt-details-02-container {
+  @include media(laptop) {
+    display: flex;
+  }
+}
+
 .rt-details-02 {
   padding-bottom: math.percentage(math.div(600, 375));
   height: 0;
@@ -461,8 +468,10 @@ ul {
     padding-bottom: math.percentage(math.div(600, 720));
   }
 
-  
-  
+  @include media(laptop) {
+    width: 50%;
+    padding-bottom: math.percentage(math.div(300, 720));
+  }
 
   .image-container {
     position: absolute;
@@ -484,27 +493,30 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding-bottom: 59px;    
+    padding-bottom: 59px;
 
-    .description[data-typography='p2']{
+    .description {
+      max-width: 339px;
+    }
+
+    .description[data-typography='p2'] {
       @include t-p2();
     }
-    .description[data-typography='p3']{
+    .description[data-typography='p3'] {
       @include t-p3();
     }
 
-    .title{
+    .title {
       margin-bottom: 27px;
+      max-width: 339px;
     }
 
-    .title[data-typography='h2-02']{
+    .title[data-typography='h2-02'] {
       @include t-h2-02();
     }
 
-    .title[data-typography='h2-03']{
+    .title[data-typography='h2-03'] {
       @include t-h2-03();
     }
-
-
   }
 }
