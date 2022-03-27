@@ -658,6 +658,10 @@ ul {
   padding-top: 64px;
   padding-bottom: 80px;
 
+  @include media(laptop) {
+    padding: 72px 0;
+  }
+
   .logo {
     display: block;
     height: 33px;
@@ -683,15 +687,15 @@ ul {
     }
   }
 
-  .social-links-list{
+  .social-links-list {
     display: flex;
     align-items: center;
     gap: 28px;
     margin-top: 88px;
     height: 20px;
 
-    a:hover{
-      path{
+    a:hover {
+      path {
         fill: $white;
       }
     }
