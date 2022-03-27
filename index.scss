@@ -231,6 +231,10 @@ ul {
   }
 }
 
+body {
+  background: #fffcf8;
+}
+
 .r-navbar {
   margin-top: 32px;
   @include container();
@@ -439,10 +443,8 @@ ul {
     @include container;
 
     @include media(laptop) {
-      $margin-left: math.percentage(math.div(55, 1440));
-      width: calc(50% - $margin-left);
-      margin: 0 0 0 $margin-left;
-      padding: 0 110px;
+      margin: 0 110px;
+      width: 445px;
       justify-content: center;
       align-items: flex-start;
     }

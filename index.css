@@ -24,6 +24,10 @@ ul {
   color: #3e52a3;
 }
 
+body {
+  background: #fffcf8;
+}
+
 .r-navbar {
   margin-top: 32px;
   width: 87.2%;
@@ -264,9 +268,8 @@ ul {
 }
 @media screen and (min-width: 1200px) {
   .rt-details .header {
-    width: 46.1805555556%;
-    margin: 0 0 0 3.8194444444%;
-    padding: 0 110px;
+    margin: 0 110px;
+    width: 445px;
     justify-content: center;
     align-items: flex-start;
   }
