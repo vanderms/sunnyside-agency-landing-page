@@ -279,6 +279,7 @@ ul {
   letter-spacing: -0.228571px;
   text-align: center;
   color: #24303e;
+  max-width: 445px;
 }
 @media screen and (min-width: 1200px) {
   .rt-details .header .title {
@@ -454,6 +455,11 @@ ul {
     width: min(1400px, 93.8888888889%);
   }
 }
+@media screen and (min-width: 1200px) {
+  .r-testimonials-section {
+    padding-top: 160px;
+  }
+}
 .r-testimonials-section .title {
   font-family: "Fraunces", serif;
   font-weight: 900;
@@ -473,15 +479,22 @@ ul {
 }
 .r-testimonials-section .testimonials-list {
   margin-top: 64px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 64px;
+}
+@media screen and (min-width: 1200px) {
+  .r-testimonials-section .testimonials-list {
+    margin-top: 81px;
+    grid-template-columns: repeat(3, 350px);
+    gap: 30px;
+    justify-content: center;
+  }
 }
 
 .r-testimonial {
   display: flex;
   flex-direction: column;
-  gap: 32px;
   align-items: center;
 }
 .r-testimonial .avatar {
@@ -490,6 +503,7 @@ ul {
   border-radius: 50%;
 }
 .r-testimonial .text {
+  margin: 32px 0;
   max-width: 445px;
   font-family: "Barlow", sans-serif;
   font-weight: 600;
@@ -498,6 +512,11 @@ ul {
   text-align: center;
   letter-spacing: -0.128571px;
   color: #5b636d;
+}
+@media screen and (min-width: 1200px) {
+  .r-testimonial .text {
+    margin: 58px 0 69px;
+  }
 }
 .r-testimonial .name {
   font-family: "Fraunces", serif;

@@ -449,6 +449,7 @@ ul {
 
     .title {
       @include t-h2();
+      max-width: 445px;
     }
 
     .description {
@@ -572,22 +573,33 @@ ul {
   padding-top: 64px;
   @include container;
 
+  @include media(laptop) {
+    padding-top: 160px;
+  }
+
   .title {
     @include t-h2-04();
   }
 
   .testimonials-list {
     margin-top: 64px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 64px;
+
+    @include media(laptop) {
+      margin-top: 81px;
+      grid-template-columns: repeat(3, 350px);
+      gap: 30px;
+      justify-content: center;
+    }
   }
 }
 
 .r-testimonial {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+
   align-items: center;
 
   .avatar {
@@ -597,8 +609,13 @@ ul {
   }
 
   .text {
+    margin: 32px 0;
     max-width: 445px;
     @include t-p4();
+
+    @include media(laptop) {
+      margin: 58px 0 69px;
+    }
   }
 
   .name {
