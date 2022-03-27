@@ -649,3 +649,51 @@ ul {
     }
   }
 }
+
+.r-footer {
+  background: #90d4c6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 80px;
+
+  .logo {
+    display: block;
+    height: 33px;
+    width: auto;
+  }
+
+  .navlink-list {
+    margin-top: 40px;
+    display: flex;
+    gap: 57px;
+
+    .navlink {
+      font-family: $font-barlow;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: -0.128571px;
+      color: #458d7e;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .social-links-list{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 88px;
+    height: 20px;
+
+    a:hover{
+      path{
+        fill: $white;
+      }
+    }
+  }
+}
