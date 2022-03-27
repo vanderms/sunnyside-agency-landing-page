@@ -109,6 +109,33 @@ $dark-moderate-cyan: #458c7e;
   opacity: 0.75;
 }
 
+@mixin t-h2-04 {
+  font-family: $font-fraunces;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 4px;
+  color: #a7aaad;
+  text-transform: uppercase;
+
+  @include media(laptop) {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 5px;
+  }
+}
+
+@mixin t-h3 {
+  font-family: $font-fraunces;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.128571px;
+  color: #24303e;
+}
+
 @mixin t-p1 {
   font-family: $font-barlow;
   font-weight: 600;
@@ -136,6 +163,26 @@ $dark-moderate-cyan: #458c7e;
 @mixin t-p3 {
   @include t-p2;
   color: #19536c;
+}
+
+@mixin t-p4 {
+  font-family: $font-barlow;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: -0.128571px;
+  color: #5b636d;
+}
+
+@mixin t-p5 {
+  font-family: $font-barlow;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: -0.1px;
+  color: #a7aaad;
 }
 
 @mixin t-cta-primary {
@@ -518,5 +565,48 @@ ul {
     .title[data-typography='h2-03'] {
       @include t-h2-03();
     }
+  }
+}
+
+.r-testimonials-section {
+  padding-top: 64px;
+  @include container;
+
+  .title {
+    @include t-h2-04();
+  }
+
+  .testimonials-list {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+}
+
+.r-testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+  }
+
+  .text {
+    max-width: 445px;
+    @include t-p4();
+  }
+
+  .name {
+    @include t-h3();
+  }
+
+  .job-title {
+    margin-top: 9px;
+    @include t-p5();
   }
 }
