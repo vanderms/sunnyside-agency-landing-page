@@ -538,4 +538,25 @@ ul {
   color: #a7aaad;
 }
 
+.r-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 86px;
+}
+@media screen and (min-width: 720px) {
+  .r-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .r-gallery {
+    margin-top: 160px;
+  }
+}
+.r-gallery .image-container .image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /*# sourceMappingURL=index.css.map */

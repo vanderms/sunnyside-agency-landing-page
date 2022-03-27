@@ -627,3 +627,25 @@ ul {
     @include t-p5();
   }
 }
+
+.r-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 86px;
+
+  @include media(tablet) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include media(laptop) {
+    margin-top: 160px;
+  }
+
+  .image-container {
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
